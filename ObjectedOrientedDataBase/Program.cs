@@ -16,15 +16,7 @@ namespace ObjectedOrientedDataBase
 
         static void Main(string[] args)
         {
-            db.DeleteDatabase(databaseName, true);
-            db.CreateDatabase(databaseName);
-            db.OpenDatabase(databaseName);
-
-            AddElementsToDataBase();
-            WhoHaveBooks();
-
-            Console.ReadKey();
-            db.Close();
+            StartsWindow();          
         }
 
         public static void WhoHaveHowManyBooks()
@@ -321,16 +313,18 @@ namespace ObjectedOrientedDataBase
 
         public static void StartsWindow()
         {
-            string welcomeScreen = "////////////////////////////////\n" + 
-                "Projekt obiektowej bazy danych\n" + 
+            string welcomeScreen = "////////////////////////////////\n" +
+                "Projekt obiektowej bazy danych\n" +
                 "\"Baza danych biblioteki\"\n" +
                 "Wykonali:\n" +
-                "inż. Magdalena Lebiedziewicz\n" +
-                "inż. Patryk Kozłowski\n" +
-                "inż. Adrian Buśko\n";
+                "\tinż. Magdalena Lebiedziewicz\n" +
+                "\tinż. Patryk Kozłowski\n" +
+                "\tinż. Adrian Buśko\n" +
+                "////////////////////////////////\n";
             
             Console.WriteLine(welcomeScreen);
             Console.ReadKey();
+            Console.Clear();
 
             while (true)
             {
@@ -349,34 +343,50 @@ namespace ObjectedOrientedDataBase
                 Console.WriteLine("8. Wyjście z programu");
                 Console.WriteLine();
 
-                switch (Console.Read())
+                switch (Console.ReadLine())
                 {
-                    case '1':
-
+                    case "1":
+                        db.CreateDatabase(databaseName);
+                        Console.WriteLine("Ok.");
                         break;
-                    case '2':
-
+                    case "2":
+                        db.OpenDatabase(databaseName);
+                        AddElementsToDataBase();
+                        db.Close();
+                        Console.WriteLine("Ok.");
                         break;
-                    case '3':
-
+                    case "3":
+                        db.DeleteDatabase(databaseName, true);
+                        Console.WriteLine("Ok.");
                         break;
-                    case '4':
-
+                    case "4":
+                        db.OpenDatabase(databaseName);
+                        AddNewClientToDataBase();
+                        db.Close();
+                        Console.WriteLine("Ok.");
                         break;
-                    case '5':
+                    case "5":
 
+                        Console.WriteLine("Ok.");
                         break;
-                    case '6':
-
+                    case "6":
+                        db.OpenDatabase(databaseName);
+                        WhoHaveBooks();
+                        db.Close();
+                        Console.WriteLine("Ok.");
                         break;
-                    case '7':
+                    case "7":
 
+                        Console.WriteLine("Ok.");
                         break;
-                    case '8':
-
+                    case "8":
+                        db.Close();
+                        Console.WriteLine("Ok.");
+                        return;
                         break;
                     default:
-
+                        Console.WriteLine("Proszę podać prawidłową komendę...");
+                        Console.ReadKey();
                         break;                                
                 
                 }
