@@ -272,6 +272,54 @@ namespace ObjectedOrientedDataBase
             db.Store(new Wypozyczenie() { IdOsoby = 1, IdTytulu = 19, IdPB = 59, DataWyp = new DateTime(2017, 11, 1), DataZwr = new DateTime(2018, 5, 3) });
             #endregion
         }
+
+        public static bool AddNewClientToDataBase()
+        {
+            string nazwisko;
+            string imie;
+            int rokUr;
+            int miesiacUr;
+            int dzienUr;
+
+            try
+            {
+                while (true)
+                {
+                    Console.WriteLine("Proszę podać nazwisko nowego czytelnika:");
+                    nazwisko = Console.ReadLine();
+
+                    Console.WriteLine("Proszę podać imie nowego czytelnika:");
+                    imie = Console.ReadLine();
+
+                    Console.WriteLine("Proszę podać rok urodzenia nowego czytelnika:");
+                    rokUr = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Proszę podać miesiąc urodzenia nowego czytelnika:");
+                    miesiacUr = Convert.ToInt32(Console.ReadLine());
+                    
+                    Console.WriteLine("Proszę podać dzień urodzenia nowego czytelnika:");
+                    dzienUr = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Zapisać ? (Y/N)");
+                    if (Console.Read() == 'Y')
+                    {
+                        var id = (from Wypozyczajacy w in db select w).Count();
+                        db.Store(new Wypozyczajacy() { IdOsoby = (id++), Limit = 10, Imie = imie, Nazwisko = nazwisko, DataUr = new DateTime(rokUr, miesiacUr, dzienUr) });
+                        Console.Clear();
+                        break;
+                    }
+                    else Console.Clear();
+                }
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+    
+
     
     }
 }
@@ -303,26 +351,12 @@ public abstract class Osoba
                 Nazwisko = Console.ReadLine();
             }
 
-            Console.WriteLine("Stara data urodzenia: " + DataUr);
-            Console.WriteLine("Zmienić datę urodzenia ? (Y/N)");
-            if (Console.Read() == 'Y')
-            {
-                Console.WriteLine("Nowa data urodzenia: ");
-                //DataUr = (DateTime)Console.ReadLine();
-            }
-
             return true;
         }
         catch (Exception e)
         {
             return false;
         }
-    }
-
-    public bool ChangeData(string _Nazwisko, string _Imie)
-    {
-        //TODO
-        return true;
     }
 }
 
