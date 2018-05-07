@@ -19,6 +19,7 @@ namespace ObjectedOrientedDataBase
             //db = new DB("server=(local);password=;options=none;"); 
 
             db.OpenDatabase(databaseName);
+            WhoHaveBooks();
 
 
 
@@ -250,6 +251,26 @@ namespace ObjectedOrientedDataBase
             #endregion
 
             db.Close();
+        }
+
+        public static void WhoHaveBooks() //kto ma jaką książkę
+        {
+
+            var outWyp = from Wypozyczenie w in db where (w.DataZwr == DateTime.MinValue) select w;
+            foreach (var item in outWyp)
+            {
+                var outTyt = from Tylul w1 in db where (item.IdTytulu == w1.IdTytulu) select w1;
+                foreach (var item1 in outTyt)
+                {
+                    Console.Write("\"" + item1.Tytul + "\", ");
+                }
+
+                var OutOsb = from Wypozyczajacy w2 in db where (item.IdOsoby == w2.IdOsoby) select w2;
+                foreach (var item2 in OutOsb)
+                {
+                    Console.WriteLine(item2.Imie + " " + item2.Nazwisko);
+                }
+            }
         }
     }
 }
