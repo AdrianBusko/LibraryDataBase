@@ -9,3 +9,6 @@ E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOriented
 E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\obj\Debug\ObjectedOrientedDataBase.exe
 E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\obj\Debug\ObjectedOrientedDataBase.pdb
 E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\obj\Debug\ObjectedOrientedDataBase.csprojResolveAssemblyReference.cache
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\LibraryDataBase\ObjectedOrientedDataBase\bin\Debug\ObjectedOrientedDataBase.exe.config
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\LibraryDataBase\ObjectedOrientedDataBase\obj\Debug\ObjectedOrientedDataBase.exe
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\LibraryDataBase\ObjectedOrientedDataBase\obj\Debug\ObjectedOrientedDataBase.pdb
