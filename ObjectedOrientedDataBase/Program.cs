@@ -318,8 +318,71 @@ namespace ObjectedOrientedDataBase
                 return false;
             }
         }
-    
 
+        public static void StartsWindow()
+        {
+            string welcomeScreen = "////////////////////////////////\n" + 
+                "Projekt obiektowej bazy danych\n" + 
+                "\"Baza danych biblioteki\"\n" +
+                "Wykonali:\n" +
+                "inż. Magdalena Lebiedziewicz\n" +
+                "inż. Patryk Kozłowski\n" +
+                "inż. Adrian Buśko\n";
+            
+            Console.WriteLine(welcomeScreen);
+            Console.ReadKey();
+
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine(welcomeScreen);
+                Console.WriteLine("Proszę podać numer akcji do wykonania: ");
+                Console.WriteLine("1. Utworzenie bazy");
+                Console.WriteLine("2. Zainicjowanie bazy");
+                Console.WriteLine("3. Wyczyszczenie bazy");
+                Console.WriteLine("=====================");
+                Console.WriteLine("4. Dodanie nowego czytelnika");
+                Console.WriteLine("5. Zmiana danych czytelnika");
+                Console.WriteLine("6. Wyświetlenie aktualnie wypożyczonych książek");
+                Console.WriteLine("7. Wyświetlenie liczby poszczególnych tytułów książek");
+                Console.WriteLine("=====================");
+                Console.WriteLine("8. Wyjście z programu");
+                Console.WriteLine();
+
+                switch (Console.Read())
+                {
+                    case '1':
+
+                        break;
+                    case '2':
+
+                        break;
+                    case '3':
+
+                        break;
+                    case '4':
+
+                        break;
+                    case '5':
+
+                        break;
+                    case '6':
+
+                        break;
+                    case '7':
+
+                        break;
+                    case '8':
+
+                        break;
+                    default:
+
+                        break;                                
+                
+                }
+
+            }
+        }
     
     }
 }
