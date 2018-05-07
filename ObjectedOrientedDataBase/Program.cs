@@ -16,23 +16,40 @@ namespace ObjectedOrientedDataBase
 
         static void Main(string[] args)
         {
-            //db = new DB("server=(local);password=;options=none;"); 
-
+            db.DeleteDatabase(databaseName, true);
+            db.CreateDatabase(databaseName);
             db.OpenDatabase(databaseName);
+
+            AddElementsToDataBase();
             WhoHaveBooks();
-
-
 
             Console.ReadKey();
             db.Close();
         }
 
-        public void AddItemsToDataBase()
+        public static void WhoHaveBooks() //kto ma jaką książkę
         {
-            db.DeleteDatabase(databaseName, true);
-            db.CreateDatabase(databaseName);
-            db.OpenDatabase(databaseName);
-            //Start
+            int iter = 1;
+            var outWyp = from Wypozyczenie w in db where (w.DataZwr == DateTime.MinValue) select w;
+            foreach (var item in outWyp)
+            {
+                var outTyt = from Tylul w1 in db where (item.IdTytulu == w1.IdTytulu) select w1;
+                foreach (var item1 in outTyt)
+                {
+                    Console.Write(iter + ". \"" + item1.Tytul + "\", ");
+                }
+
+                var OutOsb = from Wypozyczajacy w2 in db where (item.IdOsoby == w2.IdOsoby) select w2;
+                foreach (var item2 in OutOsb)
+                {
+                    Console.WriteLine("\t\t" + item2.Imie + " " + item2.Nazwisko);
+                }
+                iter++;
+            }
+        }
+
+        public static void AddElementsToDataBase()
+        {
             #region addItems
             //Autor
             db.Store(new Autor() { IdOsoby = 1, Imie = "Adam", Nazwisko = "Abacki", DataUr = new DateTime(2000, 1, 2) });
@@ -249,29 +266,8 @@ namespace ObjectedOrientedDataBase
             db.Store(new Wypozyczenie() { IdOsoby = 19, IdTytulu = 18, IdPB = 58, DataWyp = new DateTime(2017, 10, 25), DataZwr = DateTime.MinValue });
             db.Store(new Wypozyczenie() { IdOsoby = 1, IdTytulu = 19, IdPB = 59, DataWyp = new DateTime(2017, 11, 1), DataZwr = new DateTime(2018, 5, 3) });
             #endregion
-
-            db.Close();
         }
-
-        public static void WhoHaveBooks() //kto ma jaką książkę
-        {
-
-            var outWyp = from Wypozyczenie w in db where (w.DataZwr == DateTime.MinValue) select w;
-            foreach (var item in outWyp)
-            {
-                var outTyt = from Tylul w1 in db where (item.IdTytulu == w1.IdTytulu) select w1;
-                foreach (var item1 in outTyt)
-                {
-                    Console.Write("\"" + item1.Tytul + "\", ");
-                }
-
-                var OutOsb = from Wypozyczajacy w2 in db where (item.IdOsoby == w2.IdOsoby) select w2;
-                foreach (var item2 in OutOsb)
-                {
-                    Console.WriteLine(item2.Imie + " " + item2.Nazwisko);
-                }
-            }
-        }
+    
     }
 }
 
