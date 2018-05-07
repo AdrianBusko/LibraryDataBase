@@ -27,6 +27,11 @@ namespace ObjectedOrientedDataBase
             db.Close();
         }
 
+        public static void WhoHaveHowManyBooks()
+        {
+
+        }
+
         public static void WhoHaveBooks() //kto ma jaką książkę
         {
             int iter = 1;
@@ -277,6 +282,48 @@ public abstract class Osoba
     public string Nazwisko { get; set; }
     public string Imie { get; set; }
     public DateTime DataUr { get; set; }
+
+    public bool ChangeData(int _IdOsoby)
+    {
+        try
+        {
+            Console.WriteLine("Stare imie: " + Imie);
+            Console.WriteLine("Zmienić imie ? (Y/N)");
+            if (Console.Read() == 'Y')
+            {
+                Console.WriteLine("Nowe imie: ");
+                Imie = Console.ReadLine();
+            }
+
+            Console.WriteLine("Stare nazwisko: " + Nazwisko);
+            Console.WriteLine("Zmienić nazwisko ? (Y/N)");
+            if (Console.Read() == 'Y')
+            {
+                Console.WriteLine("Nowe nazwisko: ");
+                Nazwisko = Console.ReadLine();
+            }
+
+            Console.WriteLine("Stara data urodzenia: " + DataUr);
+            Console.WriteLine("Zmienić datę urodzenia ? (Y/N)");
+            if (Console.Read() == 'Y')
+            {
+                Console.WriteLine("Nowa data urodzenia: ");
+                //DataUr = (DateTime)Console.ReadLine();
+            }
+
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+    public bool ChangeData(string _Nazwisko, string _Imie)
+    {
+        //TODO
+        return true;
+    }
 }
 
 public class Wypozyczajacy : Osoba
