@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>EloqueraDB</id>
+    <version>6.3.3</version>
+    <title>Eloquera Database</title>
+    <authors>Eloquera Corp.</authors>
+    <owners>Eloquera Corp.</owners>
+    <licenseUrl>http://eloquera.com/content/eloquera-licensing</licenseUrl>
+    <projectUrl>http://eloquera.com/</projectUrl>
+    <iconUrl>http://eloquera.com/sites/default/files/logo1.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Eloquera provides all the inherent advantages of an object database. Build and maintain your applications with unprecedented speed. Built on the .NET platform it uses LINQ and SQL interfaces. Performance is class leading and it is free to use.
+
+Eloquera Enterprise Database builds on and enhances the existing functionality. In particular it provides levels of reliability and availability suitable for the most critical and demanding environments.
+
+You can have your very own fast, reliable, distributed cloud.
+
+Performance is enhanced by state of the art load balancing. Maximum availability is guaranteed by fail over mechanisms and disaster recovery options, whilst information is securely protected at all times.</description>
+    <summary>Eloquera Database is native object database for .NET environments</summary>
+    <releaseNotes>- Patch release</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <language>en-US</language>
+    <tags>C# .NET database SQL object</tags>
+  </metadata>
+</package>

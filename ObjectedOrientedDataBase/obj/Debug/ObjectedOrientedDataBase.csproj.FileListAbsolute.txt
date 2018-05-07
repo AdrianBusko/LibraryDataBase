@@ -1,0 +1,11 @@
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\bin\Debug\ObjectedOrientedDataBase.exe.config
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\bin\Debug\ObjectedOrientedDataBase.exe
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\bin\Debug\ObjectedOrientedDataBase.pdb
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\bin\Debug\Eloquera.Client.dll
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\bin\Debug\Eloquera.Common.dll
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\bin\Debug\Eloquera.Server.exe
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\bin\Debug\Eloquera.Client.xml
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\bin\Debug\Eloquera.Common.xml
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\obj\Debug\ObjectedOrientedDataBase.exe
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\obj\Debug\ObjectedOrientedDataBase.pdb
+E:\Studia\Semestr_8\SBD\lab_2\Eloquera\ObjectedOrientedDataBase\ObjectedOrientedDataBase\obj\Debug\ObjectedOrientedDataBase.csprojResolveAssemblyReference.cache
