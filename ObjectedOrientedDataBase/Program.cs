@@ -19,9 +19,22 @@ namespace ObjectedOrientedDataBase
             StartsWindow();          
         }
 
-        public static void WhoHaveHowManyBooks()
+        public static void HowManyBooksInLibrary()
         {
+            int num = 1;
+            var outWyp = from Tylul w in db select w;
+            foreach (var item in outWyp)
+            {
+                int iter = 1;
+                var outTyt = from PozycjaBiblioteczna w1 in db where (item.IdTytulu == w1.IdTytulu) select w1;
+                foreach (var item1 in outTyt)
+                {
+                    iter++;
+                }
 
+                Console.WriteLine(num + ". \"" + item.Tytul + "\", \tLiczba w bibliotece: " + iter.ToString());
+                num++;
+            }
         }
 
         public static void WhoHaveBooks() //kto ma jaką książkę
@@ -329,7 +342,6 @@ namespace ObjectedOrientedDataBase
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine(welcomeScreen);
                 Console.WriteLine("Proszę podać numer akcji do wykonania: ");
                 Console.WriteLine("1. Utworzenie bazy");
                 Console.WriteLine("2. Zainicjowanie bazy");
@@ -348,6 +360,7 @@ namespace ObjectedOrientedDataBase
                     case "1":
                         db.CreateDatabase(databaseName);
                         Console.WriteLine("Ok.");
+                        Console.ReadKey();
                         break;
                     case "2":
                         db.OpenDatabase(databaseName);
@@ -366,7 +379,7 @@ namespace ObjectedOrientedDataBase
                         Console.WriteLine("Ok.");
                         break;
                     case "5":
-
+                        //TODO
                         Console.WriteLine("Ok.");
                         break;
                     case "6":
@@ -376,7 +389,9 @@ namespace ObjectedOrientedDataBase
                         Console.WriteLine("Ok.");
                         break;
                     case "7":
-
+                        db.OpenDatabase(databaseName);
+                        HowManyBooksInLibrary();
+                        db.Close();
                         Console.WriteLine("Ok.");
                         break;
                     case "8":
@@ -387,8 +402,7 @@ namespace ObjectedOrientedDataBase
                     default:
                         Console.WriteLine("Proszę podać prawidłową komendę...");
                         Console.ReadKey();
-                        break;                                
-                
+                        break;                                      
                 }
 
             }
